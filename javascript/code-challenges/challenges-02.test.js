@@ -95,20 +95,20 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-// const mapTwoToThe = (arr) => arr.map(MapPowerOfValue => Math.pow(2, MapPowerOfValue));
+const mapTwoToThe = (arr) => arr.map(MapPowerOfValue => Math.pow(2, MapPowerOfValue));
 
-const mapTwoToThe = (arr) => {
-  let MapPowerOfValue = [];
+// const mapTwoToThe = (arr) => {
+//   let MapPowerOfValue = [];
 
-  for (let i = 0; i < arr.length; i++){
-    MapPowerOfValue.push(Math.pow(2, arr[i]));
-  }
-  return MapPowerOfValue;
+//   for (let i = 0; i < arr.length; i++){
+//     MapPowerOfValue.push(Math.pow(2, arr[i]));
+//   }
+//   return MapPowerOfValue;
 
-  // arr.forEach(thing =>{
-  //   MapPowerOfValue.push(2 , thing);
-  // })
-}
+//   // arr.forEach(thing =>{
+//   //   MapPowerOfValue.push(2 , thing);
+//   // })
+// }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
