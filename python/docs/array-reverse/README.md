@@ -35,7 +35,6 @@ def reverse_array(arr):
 array = [1, 2, 3, 4, 5]
 reversed_array = reverse_array(array)
 print(reversed_array)  # Output: [5, 4, 3, 2, 1]
-
 ```
 
 - Expected Failure - Not a list
