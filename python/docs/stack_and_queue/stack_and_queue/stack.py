@@ -1,3 +1,16 @@
+# class Stack:
+#     """
+#     Put docstring here
+#     """
+
+#     def __init__(self):
+#         # initialization here
+#         pass
+
+#     def some_method(self):
+#         # method body here
+#         pass
+
 class Node:
     def __init__(self, value, next=None):
         self.value = value
