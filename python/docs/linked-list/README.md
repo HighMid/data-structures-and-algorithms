@@ -21,30 +21,40 @@ Creation of a node class that represents the node in a linked list.
 
 ## Solution
 
-- Happy Case: 
+- Happy Case:
 
 ```
-def test_return_all_values():
-    linked_list = LinkedList()
-    linked_list.insert(1)
-    linked_list.insert(2)
-    assert linked_list.to_string() == "{ 2 } -> { 1 } -> NULL"
+def test_right_join():
+    legit = {
+        "BASED": "Genuine",
+        "Chill": "Calm",
+    }
+    hoax = {
+        "BASED": "pretentious",
+        "Chill": "Tense",
+    }
+    expected = [
+        ["BASED", "pretentious", "Genuine"],
+        ["Chill", "Tense", "Calm"],
+    ]
+    actual = left_join(legit, hoax, join='right')
+    assert actual == expected
 ```
-
-- Edge Case: Checks to the head of the empty list, points to newly inserted node
-
-```
-def test_edge_case_insert_into_empty_list():
-    linked_list = LinkedList()
-    linked_list.insert(1)
-    assert linked_list.head is not None
-    assert linked_list.head.value == 1
-```
-
-- Expected Failure: Calls an empty list but returns False
+- Edge Case:
 
 ```
-def test_expected_failure_search_in_empty_list():
-    linked_list = LinkedList()
-    assert not linked_list.includes(1)
+def test_empty_hash():
+    nothing = {}
+    
+    actual = left_join(nothing, nothing)
+    assert actual == []
+```
+- Expected Failure - If function has no AssertionError raised
+
+```
+def test_left_join_no_keys():
+    empty1 = {}
+    empty2 = {}
+    with pytest.raises(AssertionError):
+        assert left_join(empty1, empty2) != []
 ```
