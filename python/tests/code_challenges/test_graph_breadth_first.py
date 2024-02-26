@@ -6,7 +6,6 @@ def test_exists():
     assert Graph
 
 
-@pytest.mark.skip("TODO")
 def test_bfs(graph):
     nodes = graph.get_nodes()
     root = nodes[0]
@@ -16,6 +15,33 @@ def test_bfs(graph):
     assert actual == expected
 
     # DANGER: Metroville/Monstropolis could be switched as well as Narnia/Naboo and still be valid BFS. What to do?
+
+def test_bfs_single_node(graph):
+    solitary = graph.add_node("Solitary")
+
+    actual = graph.breadth_first(solitary)
+    expected = ["Solitary"]
+    assert actual == expected, "BFS on a graph with a single node should return just that node."
+
+def test_bfs_disconnected_components(graph):
+    isolated = graph.add_node("Isolated")
+
+    nodes = graph.get_nodes()
+    root = nodes[0]
+    actual = graph.breadth_first(root)
+
+    assert "Isolated" not in actual, "BFS should not visit disconnected components."
+
+def test_bfs_with_cycles(graph):
+
+    nodes = graph.get_nodes()
+    root = nodes[0]
+
+    actual = graph.breadth_first(root)
+    visited_once = set(actual)
+
+    assert len(actual) == len(visited_once), "BFS should visit each node exactly once, even in graphs with cycles."
+
 
 
 @pytest.fixture
